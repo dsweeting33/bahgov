@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahamas Government</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"/>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Bahamas Government</h1>
+    </header>
+    <main>
+        <div id="map"></div>
+    </main>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahamas Government</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"/>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Bahamas Government</h1>
+        <nav>
+            <ul>
+                <li><a href="https://example.com/department1">Department 1</a></li>
+                <li><a href="https://example.com/department2">Department 2</a></li>
+                <li><a href="https://example.com/department3">Department 3</a></li>
+                <li><a href="https://example.com/department4">Department 4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="map"></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Bahamas Government. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+    <footer>
+        <p>&copy; 2023 Bahamas Government. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #000;
+}
+/* Add these styles to your existing styles.css file */
+
+nav {
+    margin-top: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #002b5c;
+    padding: 1rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #ffcc00;
+}
+
+main {
+    padding: 1rem;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    border: 1px solid #002b5c;
+}
+
+footer {
+    background-color: #002b5c;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const map = L.map("map").setView([25.0343, -77.3963], 7);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    // Add markers for each island with a popup containing information about the island
+    const islands = [
+        {
+            name: "Nassau",
+            position: [25.0343, -77.3963],
+            description: "Nassau is the capital of the Bahamas...",
+        },
+        // Add more island data here
+    ];
+
+    islands.forEach((island) => {
+        const marker = L.marker(island.position).addTo(map);
+        marker.bindPopup(`<h2>${island.name}</h2><p>${island.description}</p>`);
+    });
+});
